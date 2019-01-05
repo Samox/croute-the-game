@@ -12,6 +12,7 @@ import { Event } from './event.entity';
 import { Catalog } from './catalog.entity';
 import { AddIdToCatalogHandler } from './commands/handlers/add-id-to-catalog.handler';
 import { MovementModule } from './application/movement/movement.app';
+import { CreateMovementHandler } from './application/movement/commands/handlers/create-movement.handler';
 
 @Module({
   imports: [
@@ -35,6 +36,7 @@ import { MovementModule } from './application/movement/movement.app';
     AppService,
     CreateArticleHandler,
     AddIdToCatalogHandler,
+    CreateMovementHandler,
     EventSaga,
   ],
 })
@@ -47,7 +49,7 @@ export class AppModule implements OnModuleInit {
   ) {}
   onModuleInit() {
     this.commandBus$.setModuleRef(this.moduleRef);
-    this.commandBus$.register([CreateArticleHandler, AddIdToCatalogHandler]);
+    this.commandBus$.register([CreateArticleHandler, AddIdToCatalogHandler, CreateMovementHandler]);
     this.eventBus$.setModuleRef(this.moduleRef);
     this.eventBus$.combineSagas([this.eventSaga.eventPublished, this.eventSaga.entityCreated]);
   }
