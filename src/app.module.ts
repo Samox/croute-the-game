@@ -11,6 +11,7 @@ import { ArticleRepository } from './article.repository';
 import { Event } from './event.entity';
 import { Catalog } from './catalog.entity';
 import { AddIdToCatalogHandler } from './commands/handlers/add-id-to-catalog.handler';
+import { MovementModule } from './application/movement/movement.app';
 
 @Module({
   imports: [
@@ -26,6 +27,7 @@ import { AddIdToCatalogHandler } from './commands/handlers/add-id-to-catalog.han
     }),
     TypeOrmModule.forFeature([Article, Event, Catalog]),
     CQRSModule,
+    MovementModule,
   ],
   controllers: [AppController],
   providers: [
