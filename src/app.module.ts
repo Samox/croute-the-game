@@ -11,7 +11,7 @@ import { ArticleRepository } from './article.repository';
 import { Event } from './event.entity';
 import { Catalog } from './catalog.entity';
 import { AddIdToCatalogHandler } from './commands/handlers/add-id-to-catalog.handler';
-import { MovementModule } from './application/movement/movement.app';
+import { MovementModule } from './application/movement/movement.module';
 import { CreateMovementHandler } from './application/movement/commands/handlers/create-movement.handler';
 
 @Module({
