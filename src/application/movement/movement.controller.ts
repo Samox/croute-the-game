@@ -1,5 +1,5 @@
 import { Controller, Post, Body, Get } from '@nestjs/common';
-import { MovementDto } from './interface/movement.dto';
+import { MovementDto } from './interfaces/movement.dto';
 import { MovementGateway } from './movement.gateway';
 
 @Controller('/movements')
